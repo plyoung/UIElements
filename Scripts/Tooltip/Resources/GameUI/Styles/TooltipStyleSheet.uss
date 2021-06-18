@@ -1,0 +1,19 @@
+.tooltip {
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    align-items: center;
+    position: absolute;   
+    height: 35px;
+    border-radius: 3px;
+    border-width: 1px;
+    border-color: var(--color-back-drk);
+    background-color: var(--color-back-mid);
+}
+
+.tooltip__label {
+    color: var(--color-primary-mid);
+    -unity-text-align: middle-center;
+    flex-grow: 1;
+    padding: 0 10px;
+}
