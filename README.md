@@ -4,7 +4,7 @@ Various scripts related to Unity UI Toolkit (UIElements).
 
 ## Tooltip
 
-UIElements doe snot have tooltip support at runtime. Here's some code to show how you can get it working.
+UIElements does not have tooltip support at runtime. Here's some code to show how you can get it working.
 
 You want to add something like this near the end of a UXML document. It needs to be at the end so that the tooltip will appear over other elements and not behind them.
 
