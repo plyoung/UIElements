@@ -17,7 +17,7 @@ Now you need to bind this to all the buttons and other elements which can show a
 
 ```cs
 var tooltip = root.Q<Tooltip>("tooltip");
-var button = panel.Q<Button>("some-button");
+var button = root.Q<Button>("some-button");
 button.AddManipulator(new TooltipManipulator(tooltip));
 ```
 
