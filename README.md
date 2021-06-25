@@ -4,6 +4,8 @@ Various scripts related to Unity UI Toolkit (UIElements).
 
 ## Tooltip
 
+![Image of Tooltip](/Images/tooltip.gif)
+
 UIElements does not have tooltip support at runtime. Here's some code to show how you can get it working.
 
 You want to add something like this near the end of a UXML document. It needs to be at the end so that the tooltip will appear over other elements and not behind them.
@@ -31,10 +33,10 @@ For example, to have the tooltip appear to the right-hand side of a button you w
 
 `<ui:Button name="some-button" text="Button" tooltip="R:Settings" />`
 
-![Image of Tooltip](/Images/tooltip.gif)
-
 
 ## AspectRatioPadding
+
+![Image of AspectRatioPadding](/Images/aspectratio.png)
 
 This is a row layout element which will add padding elements to the left and right and update them to push the "central" items to fit into a certain aspect ratio. So, if you choose to have a 4:3 ratio but this element is at 16:9 then padding is added to the left and right, same for when you design at 16:9 but the game is player on ultra wide. 
 
@@ -50,5 +52,36 @@ Sample, 4:3 design on 16:9 "display".
 </ui:UXML>
 ```
 
-![Image of AspectRatioPadding](/Images/aspectratio.png)
+
+## Blur/Glass Effect
+
+![Image of Blur](/Images/blur.webp)
+
+An example of doing a blur or milky glass effect. I am using URP but this could be adopted for other since a main part of this is a Rendertexture which provides the panel with the image information it needs.
+
+You can insert the Blur Panel like any other element into UXML, or via C#.
+
+`<Game.UI.BlurPanel name="scene-toolbar" class="toolbar-back">`
+
+Then in C# you need to tell it about the blur image (render texture).
+
+```csharp
+[SerializeField] private Texture blurTexture;
+...
+root.Q<BlurPanel>("scene-toolbar").SetImage(blurTexture);
+```
+
+If the Blur Panel is inside other elements that might move then you need to specify the moving parent too else the Blur will not update correctly.
+
+`panel.SetImage(blurTexture, someParentElement);`
+
+The shader information comes from https://github.com/ArneBezuijen/urp_kawase_UI_blur and https://github.com/sebastianhein/urp_kawase_blur .
+
+Add the Blur Render Feature to the Forward Renderer Data via inspector. A Blur Render camera is used to render only a panel which uses a Blur material. Think of this camera as viewing the rendered world via a window (a plane using a blur shader material) and then rendering that to a texture. This texture is then used by the UI element. Note the culling mask and layer used by camera and plane object.
+
+![Image of Blur](/Images/blur2.png)
+
+![Image of Blur](/Images/blur3.png)
+
+
 
