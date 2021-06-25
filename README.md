@@ -75,7 +75,7 @@ If the Blur Panel is inside other elements that might move then you need to spec
 
 `panel.SetImage(blurTexture, someParentElement);`
 
-The shader information comes from https://github.com/ArneBezuijen/urp_kawase_UI_blur and https://github.com/sebastianhein/urp_kawase_blur .
+Shader information from https://github.com/ArneBezuijen/urp_kawase_UI_blur and https://github.com/sebastianhein/urp_kawase_blur and cleand up for this project.
 
 Add the Blur Render Feature to the Forward Renderer Data via inspector. A Blur Render camera is used to render only a panel which uses a Blur material. Think of this camera as viewing the rendered world via a window (a plane using a blur shader material) and then rendering that to a texture. This texture is then used by the UI element. Note the culling mask and layer used by camera and plane object.
 
