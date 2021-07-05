@@ -49,7 +49,7 @@ Examples of how modal popup panels can be done. These will add a fullscreen elem
 ```
 Game.UI.PopupPanel can be used to contain whatever you want to be in a popup panel  (for example a Settings panel) or you can derive from it to create a more specialised popup, like the included PopupTextField, PopupMessage, and ColorPopup examples.
 
-```
+```csharp
 var popupMsg = root.Q<PopupMessage>("popup-message");
 var popupEd = root.Q<PopupTextField>("popup-textfield");
 ...
@@ -68,8 +68,6 @@ popupEdit.Show("label", "message", "empty or text to set", 20,
 		popupEdit.Hide();
 	});
 ```
-
-
 
 ## Tooltip
 
