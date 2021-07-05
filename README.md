@@ -23,7 +23,7 @@ Insert the color field somewhere via UXML.
 
 Link the color field with the color popup.
 
-```csharp
+```cs
 var colorPopup = root.Q<ColorPopup>("color-popup");
 var gridFillColorField = root.Q<ColorField>("grid-fill-color");
 gridFillColorField.ColorPopup = colorPopup;
@@ -49,7 +49,7 @@ Examples of how modal popup panels can be done. These will add a fullscreen elem
 ```
 Game.UI.PopupPanel can be used to contain whatever you want to be in a popup panel  (for example a Settings panel) or you can derive from it to create a more specialised popup, like the included PopupTextField, PopupMessage, and ColorPopup examples.
 
-```csharp
+```cs
 var popupMsg = root.Q<PopupMessage>("popup-message");
 var popupEd = root.Q<PopupTextField>("popup-textfield");
 ...
@@ -132,7 +132,7 @@ You can insert the Blur Panel like any other element into UXML, or via C#.
 
 Then in C# you need to tell it about the blur image (render texture).
 
-```csharp
+```cs
 [SerializeField] private Texture blurTexture;
 ...
 root.Q<BlurPanel>("scene-toolbar").SetImage(blurTexture);
