@@ -52,10 +52,10 @@ Game.UI.PopupPanel can be used to contain whatever you want to be in a popup pan
 ```cs
 var popupMsg = root.Q<PopupMessage>("popup-message");
 var popupEd = root.Q<PopupTextField>("popup-textfield");
-...
-...
+
+
 popupMsg.Show("Lable", "message", "Close");
-...
+
 // 20 = how many characters allowed
 popupEdit.Show("label", "message", "empty or text to set", 20,
 	t => 
