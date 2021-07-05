@@ -1,5 +1,74 @@
 # UIElements
-Various scripts related to Unity UI Toolkit (UIElements).
+Various scripts related to Unity UI Toolkit (UIElements). These are not all plug-and-play but should serve as examples you can adopt for your own needs.
+
+## Color Field and Popup
+
+![Image of colorfield](/Images/colorfield.webp)
+
+A Color field and Color picker popup. You will need the popup and blur panel related scripts too if you want to use it as is.
+
+The popup element should be at bottom of the document's root so that it can appear over other elements. 
+
+```
+	...
+    <Game.UI.ColorPopup name="color-popup" start-visible="false" />
+</ui:UXML>
+```
+
+Insert the color field somewhere via UXML.
+
+```
+<Game.UI.ColorField name="grid-fill-color" label="Fill Colour" reset-label="\U0000f0e2" />
+```
+
+Link the color field with the color popup.
+
+```csharp
+var colorPopup = root.Q<ColorPopup>("color-popup");
+var gridFillColorField = root.Q<ColorField>("grid-fill-color");
+gridFillColorField.ColorPopup = colorPopup;
+gridFillColorField.ResetButtonPressed += () => gridFillColorField.value = Const.DefaultGridFillColor;
+```
+
+## Popup panels
+
+![Image of popup](/Images/popup-edit.png)
+![Image of popup](/Images/popup-msg.png)
+
+Examples of how modal popup panels can be done. These will add a fullscreen element to prevent mouse clicks from reaching elements behind. Of course these need to be added to the root of a document and at the bottom so they appear over other elements.
+
+```
+    <Game.UI.PopupPanel name="settings-popup" class="settings-popup" start-visible="false">
+        <ui:Instance template="SettingsPanel" class="settings-panel fill" />        
+        <ui:Button text="\U0000f00d" name="popup-close-button" class="popup-close-button" />
+    </Game.UI.PopupPanel>
+	
+    <Game.UI.PopupTextField name="popup-textfield" start-visible="false" />
+    <Game.UI.PopupMessage name="popup-message" start-visible="false" />
+</ui:UXML>
+```
+Game.UI.PopupPanel can be used to contain whatever you want to be in a popup panel  (for example a Settings panel) or you can derive from it to create a more specialised popup, like the included PopupTextField, PopupMessage, and ColorPopup examples.
+
+```
+var popupMsg = root.Q<PopupMessage>("popup-message");
+var popupEd = root.Q<PopupTextField>("popup-textfield");
+...
+...
+popupMsg.Show("Lable", "message", "Close");
+...
+// 20 = how many characters allowed
+popupEdit.Show("label", "message", "empty or text to set", 20,
+	t => 
+	{ 	// submit was pressed
+		popupEdit.Hide();
+		Debug.Log("Player entered: " + t);
+	},
+	() => 
+	{	// cancel was pressed
+		popupEdit.Hide();
+	});
+```
+
 
 
 ## Tooltip
@@ -27,7 +96,7 @@ The tooltip text comes from an element's tooltip attribute, for example ...
 
 `<ui:Button name="some-button" text="Button" tooltip="Settings" />`
 
-The tooltip will appear below the item by default but you can also hint to it to appear above, or to the left or right. Simply attach the following in front of the the tooltip text to apply the hint. "L:" for left, "R:" for right, "T:" for above, and "B:" for below.
+The tooltip will appear below the item by default but you can also hint to it to appear above, or to the left or right. Simply attach the following in front of the tooltip text to apply the hint. "L:" for left, "R:" for right, "T:" for above, and "B:" for below.
 
 For example, to have the tooltip appear to the right-hand side of a button you would do this
 
@@ -82,6 +151,5 @@ Add the Blur Render Feature to the Forward Renderer Data via inspector. A Blur R
 ![Image of Blur](/Images/blur2.png)
 
 ![Image of Blur](/Images/blur3.png)
-
 
 
