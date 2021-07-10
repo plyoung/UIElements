@@ -32,7 +32,7 @@ namespace Game.UI
 		public int RatioWidth { get; private set; } = 16;
 		public int RatioHeight { get; private set; } = 9;
 
-		// changed to modifing margin rather than adding new UI elements.
+		// changed to modifying margin rather than adding new UI elements.
 		//private VisualElement leftPadding;
 		//private VisualElement rightPadding;
 
