@@ -117,7 +117,7 @@ Sample, 4:3 design on 16:9 "display".
 
 ```
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Game.UI.AspectRatioPadding width="4" height="3" style="flex-grow:1; background-color: yellow;">
+    <Game.UI.AspectRatioPadding width="4" height="3" style="background-color: yellow;">
         <ui:VisualElement style="width:20px; background-color: red;" />
         <ui:VisualElement style="flex-grow:1; background-color: green;" />
         <ui:VisualElement style="width:20px; background-color: blue;" />
