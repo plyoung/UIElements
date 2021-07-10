@@ -111,13 +111,13 @@ For example, to have the tooltip appear to the right-hand side of a button you w
 
 ![Image of AspectRatioPadding](/Images/aspectratio.png)
 
-This is a row layout element which will add padding elements to the left and right and update them to push the "central" items to fit into a certain aspect ratio. So, if you choose to have a 4:3 ratio but this element is at 16:9 then padding is added to the left and right, same for when you design at 16:9 but the game is player on ultra wide. 
+This element will add padding/margin to the left and right and update it such to push the "central" items to fit into a certain aspect ratio. So, if you choose to have a 4:3 ratio but this element is at 16:9 then padding is added to the left and right, same for when you design at 16:9 but the game is played on ultra wide. For anything at or below your design ratio the padding will be 0.
 
 Sample, 4:3 design on 16:9 "display".
 
 ```
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Game.UI.AspectRatioPadding width="4" height="3" style="flex-grow:1; background-color: yellow;">
+    <Game.UI.AspectRatioPadding width="4" height="3" style="flex-direction: row; background-color: yellow;">
         <ui:VisualElement style="width:20px; background-color: red;" />
         <ui:VisualElement style="flex-grow:1; background-color: green;" />
         <ui:VisualElement style="width:20px; background-color: blue;" />
