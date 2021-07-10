@@ -32,20 +32,24 @@ namespace Game.UI
 		public int RatioWidth { get; private set; } = 16;
 		public int RatioHeight { get; private set; } = 9;
 
-		private VisualElement leftPadding;
-		private VisualElement rightPadding;
+		// changed to modifing margin rather than adding new UI elements.
+		//private VisualElement leftPadding;
+		//private VisualElement rightPadding;
 
 		// ------------------------------------------------------------------------------------------------------------
 
 		public AspectRatioPadding()
 		{
 			style.flexDirection = FlexDirection.Row;
+			style.flexShrink = 0;
+			style.width = Length.Percent(100);
+			style.height = Length.Percent(100);
 
-			leftPadding = new VisualElement() { name = "AspectRatioPadding-Left" };
-			rightPadding = new VisualElement() { name = "AspectRatioPadding-Right" };
+			//leftPadding = new VisualElement() { name = "AspectRatioPadding-Left" };
+			//rightPadding = new VisualElement() { name = "AspectRatioPadding-Right" };
 
-			Add(leftPadding);
-			Add(rightPadding);
+			//Add(leftPadding);
+			//Add(rightPadding);
 
 			RegisterCallback<GeometryChangedEvent>(OnGeometryChangedEvent);
 			RegisterCallback<AttachToPanelEvent>(OnAttachToPanelEvent);
@@ -65,8 +69,8 @@ namespace Game.UI
 		{
 			if (RatioWidth <= 0.0f || RatioHeight <= 0.0f)
 			{
-				leftPadding.style.width = 0;
-				rightPadding.style.width = 0;
+				style.marginLeft = 0f;
+				style.marginRight = 0f; 
 				Debug.LogError($"[AspectRatioPadding] Invalid width:{RatioWidth} or height:{RatioHeight}");
 				return;
 			}
@@ -83,18 +87,43 @@ namespace Game.UI
 			if (diff > 0.01f)
 			{
 				var w = (resolvedStyle.width - (resolvedStyle.height * designRatio)) * 0.5f;
-				leftPadding.style.width = w;
-				rightPadding.style.width = w;
+				style.marginLeft = w;
+				style.marginRight = w;
 			}
 			else
 			{
-				leftPadding.style.width = 0;
-				rightPadding.style.width = 0;
+				style.marginLeft = 0f;
+				style.marginRight = 0f;
 			}
 
-			// make sure the padding elements are at corerct positions in hierarchy
-			leftPadding.SendToBack();
-			rightPadding.BringToFront();
+			//if (RatioWidth <= 0.0f || RatioHeight <= 0.0f)
+			//{
+			//	leftPadding.style.width = 0;
+			//	rightPadding.style.width = 0;
+			//	Debug.LogError($"[AspectRatioPadding] Invalid width:{RatioWidth} or height:{RatioHeight}");
+			//	return;
+			//}
+
+			//if (float.IsNaN(resolvedStyle.width) || float.IsNaN(resolvedStyle.height))
+			//{
+			//	return;
+			//}
+
+			//if (diff > 0.01f)
+			//{
+			//	var w = (resolvedStyle.width - (resolvedStyle.height * designRatio)) * 0.5f;
+			//	leftPadding.style.width = w;
+			//	rightPadding.style.width = w;
+			//}
+			//else
+			//{
+			//	leftPadding.style.width = 0;
+			//	rightPadding.style.width = 0;
+			//}
+
+			//// make sure the padding elements are at correct positions in hierarchy
+			//leftPadding.SendToBack();
+			//rightPadding.BringToFront();
 		}
 
 		// ============================================================================================================
