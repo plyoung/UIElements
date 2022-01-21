@@ -1,0 +1,21 @@
+.slider-2d {
+    overflow: visible;
+    background-color: black;
+}
+
+.slider-2d__dragger {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: var(--color-primary-drk);
+}
+
+.slider-2d__dragger-border {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: -5px 0 0 -5px;
+    border-radius: 15px;
+    background-color: var(--color-primary-lit);
+}
