@@ -1,0 +1,49 @@
+.unity-button {
+    -unity-text-align: middle-center;
+    -unity-font-definition: var(--font-normal);
+    flex: 0 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 40px;
+    margin: 0 12px 12px 12px;
+    padding: 0 20px;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: var(--color-primary-drk);
+    background-color: var(--color-back-drk);
+    color: var(--color-primary-mid);
+}
+
+.unity-button:hover {
+    border-color: var(--color-primary-mid);
+    color: var(--color-primary-lit);
+}
+
+.unity-button:active {
+    border-color: var(--color-primary-lit);
+    color: var(--color-primary-lit);
+}
+
+.danger-button {
+    border-color: var(--color-danger-mid);
+    color: var(--color-danger-mid);
+}
+
+.danger-button:hover {
+    border-color: var(--color-danger-lit);
+    color: var(--color-danger-lit);
+}
+
+.danger-button:active {
+    border-color: var(--color-primary-lit);
+}
+
+.button-bar { 
+    flex-direction: row;
+    flex-grow: 0;
+    width: 100%;
+}
+
+.button-bar .unity-button {
+    margin-left: 0;
+}

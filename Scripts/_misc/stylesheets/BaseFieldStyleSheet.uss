@@ -1,0 +1,56 @@
+.unity-base-field {
+    flex-direction: row;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin: 0 0 5px 0;
+    padding: 0 ;
+}
+
+.unity-base-field__label {
+    color: var(--color-txt-mid);
+    font-size: 18px;
+    min-width: 150px;
+    min-height: 30px;
+    padding: 0;
+    margin: 0 5px 0 0;
+}
+
+.unity-base-field__input {
+    align-items: center;
+    flex: 1 0 0;
+    overflow: hidden;
+    margin: 0;
+    height: 30px;
+}
+
+.unity-label {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -unity-text-overflow-position: end;
+    -unity-text-align: middle-left;
+}
+
+.unity-label-wrap {
+    white-space: normal;
+    overflow: visible;
+}
+
+.unity-base-field:focus > .unity-base-field__label {
+    color: var(--color-txt-mid);
+}
+
+.unity-base-field-buttons {
+    flex-direction: row;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0 0 10px 0;    
+    justify-content: flex-end;
+}
+
+.unity-base-field-buttons > .unity-button {
+    margin: 0;
+    height: 30px;
+}

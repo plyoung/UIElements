@@ -1,0 +1,37 @@
+.unity-base-text-field {
+    white-space: nowrap;
+    --unity-selection-color: var(--color-primary-drk);
+    --unity-cursor-color: var(--color-primary-lit);
+}
+
+.unity-base-text-field__input {
+    --unity-sync-text-editor-engine: true;
+    -unity-overflow-clip-box: content-box;
+    cursor: url('/Assets/GUI/Images/Cursors/text-32x32.png') 16 16;
+    flex: 1 1 auto;
+    padding: 0 5px;
+    height: 29px;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: var(--color-primary-drk);
+    background-color: var(--color-back-drk);
+    color: var(--color-txt-mid);
+}
+
+.unity-base-text-field__input--single-line {
+    -unity-text-align: middle-left;
+}
+
+.unity-base-text-field__input--multiline {
+    -unity-text-align: upper-left;
+    height: 100px;
+    white-space: normal;
+}
+
+.unity-base-text-field__input:hover,
+.unity-base-text-field__input:focus,
+.unity-base-text-field:focus > .unity-base-text-field__input,
+.unity-base-text-field:hover > .unity-base-text-field__input {
+    border-color: var(--color-primary-mid);
+}
+

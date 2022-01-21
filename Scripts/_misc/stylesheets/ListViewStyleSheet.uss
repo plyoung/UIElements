@@ -1,0 +1,68 @@
+.unity-list-view {
+    flex-grow: 1;
+    background-color: var(--color-back-lit);
+    color: var(--color-txt-mid);
+}
+
+.unity-list-view .unity-scroll-view__content-viewport {
+    padding: 2px;
+}
+
+.unity-list-view__item--alternative-background {
+    -unity-text-align: middle-left;
+    white-space: nowrap;
+    padding-left: 5px;
+    border-width: 0 0 1px 0;
+    border-color: var(--color-back-drk);
+    background-color: var(--color-back-lit);
+    color: var(--color-txt-mid);
+}
+
+.unity-list-view__item {
+    -unity-text-align: middle-left;
+    white-space: nowrap;
+    padding-left: 5px;
+    border-width: 0 0 2px 0;
+    border-bottom-color:var(--color-back-mid);
+    background-color: transparent;
+    color: var(--color-txt-mid);
+}
+
+.unity-list-view__item:hover {
+    background-color: var(--color-primary-drk);
+    color: var(--color-txt-lit);
+}
+
+.unity-list-view__item--selected {
+    background-color: var(--color-primary-mid);
+    color: var(--color-back-drk);
+}
+
+.unity-list-view__item--selected:hover {
+    background-color: var(--color-primary-mid);
+    color: var(--color-back-drk);
+}
+
+.unity-list-view:focus > .unity-list-view__item--selected {
+    background-color: var(--color-primary-mid);
+    color: var(--color-back-drk);
+}
+
+.unity-list-view__background-fill {
+    flex-grow: 1;
+}
+
+.unity-list-view--with-border {
+    border-width: 1px;
+    border-color: var(--color-back-drk);
+}
+
+.unity-list-view__item--drag-hover {
+    background-color: var(--color-primary-mid);
+}
+
+.unity-list-view__drag-hover-bar {
+    position: absolute;
+    height: 2px;
+    background-color: var(--color-primary-mid);
+}
