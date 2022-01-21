@@ -1,0 +1,103 @@
+:root {
+    --font-normal: resource('Text/Inter-Regular SDF');
+    --font-bold: resource('Text/Inter-SemiBold SDF');
+    --font-icons-a: resource('Text/IconFont-Solid SDF');
+    --font-icons-b: resource('Text/IconFont-Regular SDF');
+    
+    --cursor-arrow: url('/Assets/GUI/Images/Cursors/default-32x32.png') 0 0;
+    --cursor-text: url('/Assets/GUI/Images/Cursors/text-32x32.png') 16 16;
+    --cursor-horizontal: url('/Assets/GUI/Images/Cursors/size_hor-32x32.png') 16 16;
+    --cursor-vertical: url('/Assets/GUI/Images/Cursors/size_ver-32x32.png') 16 16;
+    
+    --color-txt-drk: rgb(172, 172, 172);
+    --color-txt-mid: rgb(240, 240, 240);
+    --color-txt-lit: rgb(255, 255, 255);
+    
+    --color-back-drk: rgb(40, 35, 35);
+    --color-back-mid: rgba(40, 35, 35, 0.85);
+    --color-back-lit: rgba(40, 35, 35, 0.7);
+
+    /* --color-a-drk: rgb(40, 35, 35);
+    --color-a-mid: rgb(60, 55, 55);
+    --color-a-lit: rgb(120, 115, 115); */
+
+    /*--color-b-drk: rgb(82, 60, 57);
+    --color-b-mid: rgb(150, 112, 86);
+    --color-b-lit: rgb(234, 170, 127); */
+
+    --color-primary-drk: rgb(150, 112, 86);
+    --color-primary-mid: rgb(234, 170, 127);
+    --color-primary-lit: rgb(255, 224, 204);
+    
+    --color-danger-drk: rgb(70, 55, 55);
+    --color-danger-mid: rgb(216, 116, 116);
+    --color-danger-lit: rgb(255, 177, 174);
+    --color-inform-drk: rgb(59, 70, 55);
+    --color-inform-mid: rgb(124, 216, 116);
+    --color-inform-lit: rgb(187, 255, 174);
+    --color-warn-drk: rgb(174, 177, 28);
+    --color-warn-mid: rgb(235, 238, 90);
+    --color-warn-lit: rgb(253, 255, 161);
+
+    --color-screenfill-normal: rgb(40, 35, 35);
+    --color-screenfill-translucent: rgba(83, 57, 39, 0.8);
+}
+
+* {
+    font-size: 16px;
+    color: var(--color-txt-mid);
+    cursor: var(--cursor-arrow);
+    -unity-font-definition: var(--font-normal);
+}
+
+.unity-disabled {
+    opacity: 0.2;
+}
+
+.spacer {
+    flex: 1 1 0;
+    /* flex-shrink: 1;
+    flex-grow: 1; */
+}
+
+.fill {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.bold {
+    -unity-font-definition: var(--font-bold);
+}
+
+.icons-a {
+    -unity-font-definition: var(--font-icons-a);
+}
+
+.icons-b {
+    -unity-font-definition: var(--font-icons-b);
+}
+
+.h1 {
+    -unity-font-definition: var(--font-bold);
+    -unity-text-align: upper-left;
+    flex-shrink: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: var(--color-primary-drk);
+}
+
+.h2 {
+    -unity-font-definition: var(--font-bold);
+    -unity-text-align: upper-left;
+    flex-shrink: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 25px 0 10px 0;
+    color: var(--color-primary-mid);
+}
+
+
+
