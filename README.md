@@ -1,5 +1,5 @@
 # UIElements
-Various scripts related to Unity UI Toolkit (UIElements). These are not all plug-and-play but should serve as examples you can adopt for your own needs.
+Various scripts related to Unity UI Toolkit (UIElements). These are not all plug-and-play but should serve as examples you can adopt for your own needs. Look in `_misc` for more stylesheets to help you get started with styling these components.
 
 * [Aspect Ratio Padding](#aspectratiopadding)
 * [Blur/Glass Effect](#blurglass-effect)
